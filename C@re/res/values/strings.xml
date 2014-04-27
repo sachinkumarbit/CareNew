@@ -4,5 +4,13 @@
     <string name="app_name">C@re</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="Register">Register</string>
+    <string name="Info">Info</string>
+    <string name="Home">Home</string>
+    <string name="login">Login to C@re</string>
+    <string name="userid">user id.........</string>
+    <string name="password">password......</string>
+    <string name="setting">Setting</string>
+    <string name="logout">Logout</string>
 
 </resources>
