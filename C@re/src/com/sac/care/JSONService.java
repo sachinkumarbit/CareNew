@@ -12,7 +12,7 @@ public class JSONService {
 		JSONObject json;
 		
 		List<NameValuePair> data= new ArrayList<NameValuePair>();
-		data.add(new BasicNameValuePair("userid",userid ));
+		data.add(new BasicNameValuePair("userId",userid ));
 		data.add(new BasicNameValuePair("password", password));
 		
 		JSONParser jsonParser= new JSONParser();

@@ -3,6 +3,7 @@ package com.sac.care;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.Menu;
@@ -44,6 +45,16 @@ public class Login extends Activity{
 		return super.onCreateOptionsMenu(menu);
 	}
 	
+	
+	public void home(View view){
+		startActivity(new Intent("android.intent.action.MAIN"));
+	}
+	
+	public void register(View view){
+		startActivity(new Intent("android.intent.action.REGISTER"));
+		
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
@@ -52,10 +63,10 @@ public class Login extends Activity{
 		case R.id.menu_logout:
 			
 			break;
-		case R.id.menu_register:
+		case R.id.menu_register1:
 			
 			break;
-		case R.id.menu_setting:
+		case R.id.menu_setting1:
 			
 			break;
 

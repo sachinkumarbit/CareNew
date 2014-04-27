@@ -8,7 +8,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="@string/Home" />
+        android:text="@string/Home" 
+        android:onClick="home"
+        />
 
     <Button
         android:id="@+id/Info"
@@ -24,7 +26,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/Register" />
+        android:text="@string/Register" 
+        android:onClick="register"
+        />
 
     
 
@@ -55,12 +59,12 @@
         android:id="@+id/userid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText2"
+        android:layout_above="@+id/password"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="46dp"
-        android:hint="@string/userid"
-        android:ems="10" >
+        android:layout_marginBottom="29dp"
+        android:ems="10"
+        android:hint="@string/userid" >
 
         <requestFocus />
     </EditText>

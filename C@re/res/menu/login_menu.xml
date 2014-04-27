@@ -5,12 +5,12 @@
         android:title="@string/logout"
         
         ></item>
-    <item android:id="@+id/menu_setting"
+    <item android:id="@+id/menu_setting1"
         android:alphabeticShortcut="login"
         android:title="@string/setting"
         
         ></item>
-    <item android:id="@+id/menu_register"
+    <item android:id="@+id/menu_register1"
         android:alphabeticShortcut="login"
         android:title="@string/Register"
         
