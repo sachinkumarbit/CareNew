@@ -1,10 +1,11 @@
 package com.sac.care;
 
 import org.json.JSONObject;
-
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,13 +14,17 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 
-public class Login extends Activity{
+@SuppressLint("NewApi") public class Login extends Activity{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
+		 if (android.os.Build.VERSION.SDK_INT > 9) {
+	            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+	            StrictMode.setThreadPolicy(policy);
+	        }
 	}
 
 	@Override
