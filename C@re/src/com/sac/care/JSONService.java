@@ -21,4 +21,24 @@ public class JSONService {
 			
 	}
 
+	public JSONObject register(String employeeId, String employeeName,
+			String emailId, String mobile, String aMobile, String address,
+			String blood_group) {
+		// TODO Auto-generated method stub
+		List<NameValuePair> regData =new ArrayList<NameValuePair>();
+		regData.add(new BasicNameValuePair("employeeId", employeeId));
+		regData.add(new BasicNameValuePair("employeeName", employeeName));
+		regData.add(new BasicNameValuePair("emailId", emailId));
+		regData.add(new BasicNameValuePair("mobile", mobile));
+		regData.add(new BasicNameValuePair("aMobile", aMobile));
+		regData.add(new BasicNameValuePair("address", address));
+		regData.add(new BasicNameValuePair("blood_group", blood_group));
+		
+		JSONParser jsonParser= new JSONParser();
+		JSONObject json= jsonParser.getJSONFromUrl("", regData);
+
+		
+		return json;
+	}
+
 }

@@ -11,6 +11,26 @@
     <string name="userid">user id.........</string>
     <string name="password">password......</string>
     <string name="setting">Setting</string>
-    <string name="logout">Logout</string>
+    <string name="logout">Logout</string>   
+    <string name="EmployeeId">Employee Id....</string>
+    <string name="EmployeeName">Employee Name....</string>
+    <string name="EmailId">Email Id....</string>
+    <string name="Mobile">Mobile Number....</string>
+    <string name="AMobile">Alternate Mobile Number....</string>
+    <string name="Address">Address....</string>
+    <string name="Reset">Reset</string>
+    
+    <string name="bloodGroup">Blood Group</string>
+    
+      <string-array name="bloodGroup">
+        <item>O−</item>
+        <item>O+</item>
+        <item>A−</item>
+        <item>A+</item>
+        <item>B−</item>
+        <item>B+</item>
+        <item>AB−</item>
+        <item>AB+</item>
+    </string-array>
 
 </resources>

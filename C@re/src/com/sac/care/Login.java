@@ -1,5 +1,6 @@
 package com.sac.care;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -83,13 +84,18 @@ import android.widget.EditText;
 	}
 	
 	
-	public void login(View view){
+	public void login(View view) throws JSONException{
 		EditText userid=(EditText)findViewById(R.id.userid);
 		EditText password=(EditText)findViewById(R.id.password);
 		JSONService jSONService=new JSONService();
 		JSONObject json=jSONService.login(userid.getText().toString(), password.getText().toString());
 		System.out.println(json);
-		
+		if (null!= json){
+			System.out.println("userId=="+ json.getString("userId"));
+			startActivity(new Intent("android.intent.action.REGISTER"));
+		}
+		else
+			startActivity(new Intent("android.intent.action.LOGIN"));
 	}
 	
 
