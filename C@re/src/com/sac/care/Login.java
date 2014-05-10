@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
-@SuppressLint("NewApi") public class Login extends Activity{
+@SuppressLint({ "NewApi", "CommitPrefEdits" }) public class Login extends Activity{
 
 	public SharedPreferences pref;
 	public Editor editor;
@@ -102,6 +102,7 @@ import android.widget.EditText;
 				pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
 				editor = pref.edit();
 				editor.putString("userId", json.getString("userId"));
+				editor.commit();
 			}
 				
 			startActivity(new Intent("android.intent.action.REGISTER"));
