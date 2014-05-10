@@ -35,7 +35,7 @@ public class JSONService {
 		regData.add(new BasicNameValuePair("blood_group", blood_group));
 		
 		JSONParser jsonParser= new JSONParser();
-		JSONObject json= jsonParser.getJSONFromUrl("", regData);
+		JSONObject json= jsonParser.getJSONFromUrl("http://sachinkumar.site90.com/sendSMS.php", regData);
 
 		
 		return json;

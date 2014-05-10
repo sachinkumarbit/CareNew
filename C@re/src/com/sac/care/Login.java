@@ -2,21 +2,27 @@ package com.sac.care;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.ContextMenu;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
 @SuppressLint("NewApi") public class Login extends Activity{
 
+	public SharedPreferences pref;
+	public Editor editor;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -92,6 +98,12 @@ import android.widget.EditText;
 		System.out.println(json);
 		if (null!= json){
 			System.out.println("userId=="+ json.getString("userId"));
+			if(null!=json.getString("userId")){
+				pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+				editor = pref.edit();
+				editor.putString("userId", json.getString("userId"));
+			}
+				
 			startActivity(new Intent("android.intent.action.REGISTER"));
 		}
 		else

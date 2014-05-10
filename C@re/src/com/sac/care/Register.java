@@ -87,7 +87,7 @@ public class Register extends Activity{
 			JSONService jsonService= new JSONService();
 			JSONObject json= jsonService.register(employeeId, employeeName, emailId, mobile, aMobile, address1, blood_group  );
 			System.out.println("json_registration==== "  +json );
-			startActivity(new Intent(""));
+			startActivity(new Intent("android.intent.action.SUCCESS"));
 		}
 			
 	}
