@@ -42,7 +42,8 @@ public class Register extends Activity{
 		EditText EmailId=(EditText)findViewById(R.id.EmailId);
 		EditText Mobile=(EditText)findViewById(R.id.Mobile);
 		EditText AMobile=(EditText)findViewById(R.id.AMobile);
-		EditText Address=(EditText)findViewById(R.id.Address);
+		EditText Address1=(EditText)findViewById(R.id.Address1);
+		EditText Address2=(EditText)findViewById(R.id.Address2);
 		Spinner bloodGroup=(Spinner)findViewById(R.id.bloodGroup);
 		
 		String employeeId = EmployeeId.getText().toString();
@@ -50,30 +51,32 @@ public class Register extends Activity{
 		String emailId = EmailId.getText().toString();
 		String mobile = Mobile.getText().toString();
 		String aMobile = AMobile.getText().toString();
-		String address = Address.getText().toString();
+		String address1 = Address1.getText().toString();
+		String address2 = Address2.getText().toString();
+		address1=address1+address2;
 		String blood_group = bloodGroup.getSelectedItem().toString();
 		
-		if(null==employeeId && "".equals(employeeId) ){
+		if(null==employeeId || "".equals(employeeId) ){
 			Toast.makeText(getApplicationContext(), " please enter  a valid employee id...",
 					   Toast.LENGTH_LONG).show();
 		}
-		else if(null==employeeName && "".equals(employeeName)){
+		else if(null==employeeName || "".equals(employeeName)){
 			Toast.makeText(getApplicationContext(), " please enter  a valid employee name...",
 					   Toast.LENGTH_LONG).show();
 		}
-		else if(null==emailId && "".equals(emailId)){
+		else if(null==emailId || "".equals(emailId)){
 			Toast.makeText(getApplicationContext(), " please enter  a valid email id...",
 					   Toast.LENGTH_LONG).show();
 				}
-		else if(null==mobile && "".equals(mobile)){
+		else if(null==mobile || "".equals(mobile)){
 			Toast.makeText(getApplicationContext(), " please enter  a valid mobile number...",
 					   Toast.LENGTH_LONG).show();
 		}
-		else if(null==aMobile && "".equals(aMobile)){
+		else if(null==aMobile || "".equals(aMobile)){
 			Toast.makeText(getApplicationContext(), " please enter  a valid alertnative mobile number...",
 					   Toast.LENGTH_LONG).show();
 		}
-		else if(null==address && "".equals(address)){
+		else if(null==address1 || "".equals(address1)){
 			Toast.makeText(getApplicationContext(), " please enter  a valid address...",
 					   Toast.LENGTH_LONG).show();
 		}
@@ -82,7 +85,7 @@ public class Register extends Activity{
 					   Toast.LENGTH_LONG).show();
 		}else{
 			JSONService jsonService= new JSONService();
-			JSONObject json= jsonService.register(employeeId, employeeName, emailId, mobile, aMobile, address, blood_group  );
+			JSONObject json= jsonService.register(employeeId, employeeName, emailId, mobile, aMobile, address1, blood_group  );
 			System.out.println("json_registration==== "  +json );
 			startActivity(new Intent(""));
 		}

@@ -1,6 +1,5 @@
 package com.sac.care;
 
-import com.sac.care.util.SystemUiHider;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
@@ -10,6 +9,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+
+import com.sac.care.util.SystemUiHider;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -62,6 +63,16 @@ import android.view.View;
     	
     	}
     	return super.onOptionsItemSelected(item);
+    }
+    
+    public void home(View view){
+    	startActivity(new Intent("android.intent.action.MAIN"));
+    }
+    public void register(View view){
+    	startActivity(new Intent("android.intent.action.REGISTERTOLOGIN"));
+    }
+    public void info(View view){
+    	startActivity(new Intent("android.intent.action.INFO"));
     }
 
 }
