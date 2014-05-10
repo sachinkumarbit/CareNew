@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+<ScrollView 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="350dp"
     android:fillViewport="true"
-    android:orientation="vertical" >
+    android:orientation="vertical" 
+    android:layout_gravity="center">
 
     <LinearLayout
         android:id="@+id/LinearLayout01"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical" 
+        
+        >
 
         <TextView
             android:id="@+id/TextView01"
@@ -19,14 +25,11 @@
             android:paddingRight="8dip"
             android:paddingTop="8dip"
             android:text="@string/Register"
-            android:textAppearance="?android:attr/textAppearanceLarge" >
+            android:textAppearance="?android:attr/textAppearanceLarge" 
+            android:padding="20dp">
         </TextView>
 
-        <TextView
-            android:id="@+id/blank"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:text="" />
+        
 
         <EditText
             android:id="@+id/EmployeeId"
@@ -34,10 +37,13 @@
             android:layout_height="wrap_content"
             android:ems="10" 
             android:inputType="number"
-            android:hint="@string/EmployeeId">
+            android:hint="@string/EmployeeId"
+            android:layout_margin="10dp"
+            android:padding="10dp">
 
             <requestFocus />
         </EditText>
+        
 
         <EditText
             android:id="@+id/EmployeeName"
@@ -45,46 +51,119 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName" 
-            android:hint="@string/EmployeeName"/>
+            android:hint="@string/EmployeeName"
+            android:layout_margin="10dp"
+            android:padding="10dp"/>
 
+         
         <EditText
             android:id="@+id/EmailId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textEmailAddress" 
-            android:hint="@string/EmailId"/>
+            android:hint="@string/EmailId"
+           android:layout_margin="10dp"
+            android:padding="10dp"/>
 
+         
         <EditText
             android:id="@+id/Mobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone"
-            android:hint="@string/Mobile" />
+            android:hint="@string/Mobile"
+            android:layout_margin="10dp"
+            android:padding="10dp" />
 
+         
+         
         <EditText
             android:id="@+id/AMobile"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="phone" 
-            android:hint="@string/AMobile"/>
+            android:hint="@string/AMobile"
+            android:layout_margin="10dp"
+            android:padding="10dp"/>
 
+       
+         
         <EditText
-            android:id="@+id/Address"
+            android:id="@+id/Address1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPostalAddress"
-            android:hint="@string/Address" />
+            android:hint="@string/Address"
+           android:layout_margin="10dp"
+            android:padding="10dp"/>
 
+       
+         
+          <EditText
+            android:id="@+id/Address2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPostalAddress"
+            android:hint="@string/Address" 
+            android:layout_margin="10dp"
+            android:padding="10dp"/>
+
+       
+         
+        <Spinner
+        android:id="@+id/bloodGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/spinner_dropdown_background"
+        android:entries="@array/bloodGroups"
+        android:prompt="@string/bloodGroup"
+        android:layout_margin="10dp"
+        android:padding="10dp"/>
         
 	<RelativeLayout 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
+   
+
+    
+
     <Button
+        android:id="@+id/register"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:onClick="register"
+        android:text="@string/Register" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/register"
+        android:background="@android:drawable/btn_default"
+        android:onClick="reset"
+        android:text="@string/Reset" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</ScrollView> 
+
+
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+    
+     <Button
         android:id="@+id/Home"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
@@ -92,6 +171,7 @@
         android:layout_alignParentLeft="true"
         android:text="@string/Home" 
         android:onClick="home"
+        android:background="@android:drawable/ic_menu_call"
         />
 
     <Button
@@ -100,7 +180,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="@string/Info" />
+        android:text="@string/Info" 
+        android:background="@android:drawable/ic_menu_info_details"
+        />
 
     <Button
         android:id="@+id/Register"
@@ -110,36 +192,8 @@
         android:layout_centerHorizontal="true"
         android:text="@string/Register" 
         android:onClick="register"
+        android:background="@android:drawable/ic_dialog_alert"
         />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Home"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="50dp"
-        android:text="@string/Reset"
-        android:onClick="reset" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignParentRight="true"
-        android:text="@string/Register"
-        android:onClick="register" />
-
-    <Spinner
-        android:id="@+id/bloodGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/bloodGroup"
-        android:prompt="@string/bloodGroup" />
-
-        </RelativeLayout>
-    </LinearLayout>
-
-</ScrollView> 
+    </RelativeLayout>
+    
+</RelativeLayout>
