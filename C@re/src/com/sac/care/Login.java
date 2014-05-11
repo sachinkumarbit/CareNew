@@ -22,7 +22,6 @@ import android.widget.EditText;
 
 	public SharedPreferences pref;
 	public Editor editor;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -103,6 +102,8 @@ import android.widget.EditText;
 				editor = pref.edit();
 				editor.putString("userId", json.getString("userId"));
 				editor.commit();
+				System.out.println(pref.getString("userId", null));
+				
 			}
 				
 			startActivity(new Intent("android.intent.action.REGISTER"));
