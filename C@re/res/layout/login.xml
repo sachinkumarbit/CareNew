@@ -21,6 +21,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:text="@string/Info"
+        android:onClick="info"
         android:background="@android:drawable/alert_dark_frame"
          />
 

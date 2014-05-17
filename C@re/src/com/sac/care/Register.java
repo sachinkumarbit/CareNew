@@ -32,6 +32,17 @@ public class Register extends Activity{
 		super.onDestroy();
 	}
 	
+	public void home(View view){
+		startActivity(new Intent("android.intent.action.MAIN"));
+	}
+	
+	
+	public void info(View view){
+		startActivity(new Intent("android.intent.action.INFO"));
+	}
+	public void logout(View view){
+		startActivity(new Intent("android.intent.action.LOGOUT"));
+	}
 
 	public void reset(View view){
 		startActivity(new Intent("android.intent.action.REGISTER"));
@@ -85,9 +96,13 @@ public class Register extends Activity{
 					   Toast.LENGTH_LONG).show();
 		}else{
 			JSONService jsonService= new JSONService();
+			System.out.println("json_registration1==== "  );
 			JSONObject json= jsonService.register(employeeId, employeeName, emailId, mobile, aMobile, address1, blood_group  );
-			System.out.println("json_registration==== "  +json );
+			System.out.println("json_registration2==== "  +json );
+			SMS sms=new SMS();
+			sms.sendSMS("+918904033448", "hello..");
 			startActivity(new Intent("android.intent.action.SUCCESS"));
+
 		}
 			
 	}

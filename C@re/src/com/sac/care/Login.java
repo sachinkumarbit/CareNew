@@ -17,6 +17,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 @SuppressLint({ "NewApi", "CommitPrefEdits" }) public class Login extends Activity{
 
@@ -66,6 +67,10 @@ import android.widget.EditText;
 		
 	}
 	
+	public void info(View view){
+		startActivity(new Intent("android.intent.action.INFO"));
+	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
@@ -92,6 +97,12 @@ import android.widget.EditText;
 	public void login(View view) throws JSONException{
 		EditText userid=(EditText)findViewById(R.id.userid);
 		EditText password=(EditText)findViewById(R.id.password);
+		if(null==userid.getText().toString() || "".equals(userid.getText().toString()))
+			Toast.makeText(getApplicationContext(), "Please Enter a valid user id....", Toast.LENGTH_LONG).show();
+		else if(null==password.getText().toString() || "".equals(password.getText().toString()))
+			Toast.makeText(getApplicationContext(), "Please enter a valid uesr id and password ....", Toast.LENGTH_LONG).show();
+		else{
+		
 		JSONService jSONService=new JSONService();
 		JSONObject json=jSONService.login(userid.getText().toString(), password.getText().toString());
 		System.out.println(json);
@@ -110,6 +121,7 @@ import android.widget.EditText;
 		}
 		else
 			startActivity(new Intent("android.intent.action.LOGIN"));
+	}
 	}
 	
 
