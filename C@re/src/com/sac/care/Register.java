@@ -102,12 +102,15 @@ public class Register extends Activity{
 			JSONObject json1= jsonService.register(employeeId, employeeName, emailId, mobile, aMobile, address1, blood_group);
 			System.out.println("json_registration2==== "  +json1 );
 			SMS sms=new SMS();
-			sms.sendSMS("+918904033448", "hello..");
+			sms.sendSMS("8904033448", "hello..");
 			System.out.println("json_registration2==== "  +json1 );
-			String[] mobileNumbers=(String[]) json1.get("mobileNumbers");
-			if(null != mobileNumbers){
-				for(int i=0;i<mobileNumbers.length;i++){
-					System.out.println(mobileNumbers[i]);
+			
+			if(null != json1 && "true".equals(json1.getString("success"))){
+				System.out.println(json1.get("0"));
+				String s="";
+				for(int i=0;i< (json1.length()-1);i++){
+					s=""+i;
+					System.out.println(json1.getString(s));
 				}
 				
 			}
