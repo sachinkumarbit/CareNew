@@ -1,5 +1,7 @@
 package com.sac.care;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.annotation.SuppressLint;
@@ -47,7 +49,7 @@ public class Register extends Activity{
 	public void reset(View view){
 		startActivity(new Intent("android.intent.action.REGISTER"));
 	}
-	public void register(View view){
+	public void register(View view) throws JSONException{
 		EditText EmployeeId=(EditText)findViewById(R.id.EmployeeId);
 		EditText EmployeeName=(EditText)findViewById(R.id.EmployeeName);
 		EditText EmailId=(EditText)findViewById(R.id.EmailId);
@@ -96,11 +98,19 @@ public class Register extends Activity{
 					   Toast.LENGTH_LONG).show();
 		}else{
 			JSONService jsonService= new JSONService();
-			System.out.println("json_registration1==== "  );
-			JSONObject json= jsonService.register(employeeId, employeeName, emailId, mobile, aMobile, address1, blood_group  );
-			System.out.println("json_registration2==== "  +json );
+			System.out.println("json_registration1==== "+ employeeId +" ," + employeeName+" ," + emailId +" ,"+ mobile+" ," + aMobile +" ," + address1 +" ," + blood_group);
+			JSONObject json1= jsonService.register(employeeId, employeeName, emailId, mobile, aMobile, address1, blood_group);
+			System.out.println("json_registration2==== "  +json1 );
 			SMS sms=new SMS();
 			sms.sendSMS("+918904033448", "hello..");
+			System.out.println("json_registration2==== "  +json1 );
+			String[] mobileNumbers=(String[]) json1.get("mobileNumbers");
+			if(null != mobileNumbers){
+				for(int i=0;i<mobileNumbers.length;i++){
+					System.out.println(mobileNumbers[i]);
+				}
+				
+			}
 			startActivity(new Intent("android.intent.action.SUCCESS"));
 
 		}

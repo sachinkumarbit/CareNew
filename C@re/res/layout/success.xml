@@ -37,12 +37,13 @@
         />
 
     <Button
-        android:id="@+id/Info"
+        android:id="@+id/logout"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="@string/Info" 
+        android:text="@string/logout" 
+        android:onClick="logout"
         android:background="@android:drawable/ic_menu_info_details"
         />
 

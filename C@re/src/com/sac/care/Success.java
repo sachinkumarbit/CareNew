@@ -2,8 +2,10 @@ package com.sac.care;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.View;
 import android.widget.Toast;
 
 public class Success extends Activity {
@@ -21,6 +23,22 @@ public class Success extends Activity {
         }
 	}
 
+	public void login(View view){
+    	startActivity(new Intent("android.intent.action.LOGIN"));
+    }
+	
+	public void home(View view){
+		startActivity(new Intent("android.intent.action.MAIN"));
+	}
+	
+	
+	public void register(View view){
+		startActivity(new Intent("android.intent.action.REGISTER"));
+	}
+	public void logout(View view){
+		startActivity(new Intent("android.intent.action.LOGOUT"));
+	}
+	
 	@Override
 	protected void onRestart() {
 		// TODO Auto-generated method stub
